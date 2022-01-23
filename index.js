@@ -1,10 +1,9 @@
 const express = require('express')
+const router = require('./routers')
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello ares!')
-})
+app.use(router)
 
 app.listen(port, () => {
   console.log(`http://127.0.0.1:${port}`)
