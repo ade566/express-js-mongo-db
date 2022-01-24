@@ -1,0 +1,26 @@
+# CREATE DATA
+  const item = await Users.create({ 
+    name: 'Perdi', 
+    email: 'perdi@gmail.com',
+    status: 'true'
+  });
+  console.log(item);
+
+  const item = new Users();
+  item.name = 'Thor';
+  item.email = 'thor@gmail.com';
+  item.status = 'false';
+  const insert = await item.save();
+  console.log(insert);
+
+
+# UPDATE DATA
+  const updateUser = await Users.findById('61eeb4d7e91601dea82b30af');
+  updateUser.name = 'Tor';
+  const update = updateUser.save();
+  console.log(updateUser);
+
+# DELETE DATA
+  const deleteUser = await Users.deleteOne({_id: '61eeb9792cf1827dc05461dc'});
+  const deleteUser = await Users.deleteMany();
+  console.log(deleteUser);
